@@ -54,8 +54,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '',  # Add your Google OAuth client ID
-            'secret': '',     # Add your Google OAuth secret
+            'client_id': '506268061663-3132e6a2lo4pi75jgj1rgfp8v0edgarl.apps.googleusercontent.com',  # Add your Google OAuth client ID
+            'secret': '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',     # Add your Google OAuth secret
             'key': ''         # Add your Google OAuth key
         },
         'SCOPE': [
