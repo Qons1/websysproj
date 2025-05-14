@@ -1,8 +1,13 @@
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-@ez+sb!e)(5#n(so0gd#k8^i6sj7#7n=7waf_ryy@)h&(=wef'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key-for-development')
 DEBUG = True
 ALLOWED_HOSTS = []
 
@@ -54,9 +59,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '506268061663-3132e6a2lo4pi75jgj1rgfp8v0edgarl.apps.googleusercontent.com',  # Add your Google OAuth client ID
-            'secret': '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',     # Add your Google OAuth secret
-            'key': ''         # Add your Google OAuth key
+            'client_id': os.getenv('GOOGLE_OAUTH_CLIENT_ID', ''),
+            'secret': os.getenv('GOOGLE_OAUTH_CLIENT_SECRET', ''),
+            'key': ''
         },
         'SCOPE': [
             'profile',
